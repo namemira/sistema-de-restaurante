@@ -23,15 +23,15 @@ class Dashboard(Tk):
         self.sidebar = Frame(self, bg="#1A1512", width=60) 
         self.sidebar.grid(row=0, column=0, sticky="ns")
 
-        # toggle button (Ícone de abrir ☰)
-        self.toggle_btn = Button(self.sidebar, text="☰", bg="#1A1512", fg="#F4D465",
+        # toggle button (Ícone de abrir ☰) - **CORRIGIDO**
+        self.toggle_btn = Button(self.sidebar, text="☰", bg="#1A1512", fg="#F4D465", # <-- O 'text="☰"' é crucial!
                                  font=("Georgia", 12), relief="flat", command=self.toggle_sidebar)
         self.toggle_btn.pack(pady=12, padx=12, fill="x")
 
         # Lista para guardar os botões de navegação
         self.nav_buttons = []
 
-        # Botões
+        # Botões - **CORRIGIDOS** (garantindo text= em todos)
         self.nav_buttons.append(Button(self.sidebar, text="Início", bg="#2A2218", fg="#F4D465", font=("Georgia", 14),
                relief="flat", command=self.go_home))
         self.nav_buttons.append(Button(self.sidebar, text="Menu", bg="#2A2218", fg="#F4D465", font=("Georgia", 14),
@@ -68,6 +68,7 @@ class Dashboard(Tk):
         center_frame = Frame(self.content, bg="#1A1512")
         center_frame.pack(expand=True)
         
+        # Labels - **CORRIGIDAS** (garantindo text= em ambos)
         Label(center_frame, 
               text=text, 
               font=("Georgia", 20), 

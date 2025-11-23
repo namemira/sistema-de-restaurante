@@ -52,36 +52,39 @@ def create_home_page(parent_frame):
 
     # --- Título ---
     Label(content_area, 
-          text="Bem-vindo ao [Nome do Restaurante]", 
-          font=("Georgia", 28, "bold"), 
-          fg="#F4D465", 
+          text="Ébano", 
+          font=("Georgia", 33, "bold"), 
+          fg="white", 
           bg="#1A1512").pack(pady=(10, 5)) 
     
     Label(content_area, 
           text="Experiência Única. Sabores Inesquecíveis. Faça sua Reserva.", 
-          font=("Georgia", 14), 
-          fg="white", 
-          bg="#1A1512").pack(pady=(0, 25)) 
+          font=("Georgia", 20), 
+          fg="#BEA95B", 
+          bg="#1A1512").pack(pady=(10, 20)) 
 
     # --- Seção de Fotos (Carrossel) ---
     
     Label(content_area, 
-          text="Nosso Ambiente: O Cenário Perfeito", 
-          font=("Georgia", 18, "underline"), 
-          fg="white", 
+          text="O Cenário Perfeito", 
+          font=("Georgia", 18), 
+          fg="#F4D465", 
           bg="#1A1512",
-          anchor="center").pack(fill="x", pady=(20, 10))
+          anchor="center").pack(fill="x", pady=(10, 10))
           
     # 1. DEFINIÇÃO DAS FOTOS DO RESTAURANTE PARA O CARROSSEL
     restaurante_fotos = [
-        "caminho/para/sua/foto1_ambiente.jpg", 
-        "caminho/para/sua/foto2_prato.jpg", 
-        "caminho/para/sua/foto3_detalhe.png"
+          "imagens/ebano.png",
+          "imagens/interior.png",
+          "imagens/prato_principal.png",
+          "imagens/sobre.png"
     ]
 
     # 2. CRIAÇÃO E EMPACOTAMENTO DO WIDGET CARROSSEL
     # Ele usa um Frame, então se centraliza automaticamente dentro do content_area
-    carousel_widget = ImageCarousel(content_area, restaurante_fotos, delay_ms=4000) # Troca a cada 4s
+    carousel_widget = ImageCarousel(content_area, restaurante_fotos, delay_ms=4000)# Troca a cada 4s
+    print("Carrossel criado com sucesso:", carousel_widget)
+
     carousel_widget.pack(pady=10)
 
 
@@ -90,9 +93,9 @@ def create_home_page(parent_frame):
     Label(content_area, 
           text="Nossa Essência", 
           font=("Georgia", 18, "underline"), 
-          fg="white", 
+          fg="#BEA95B", 
           bg="#1A1512",
-          anchor="center").pack(fill="x", pady=(20, 5))
+          anchor="center").pack(fill="x", pady=(10, 5))
           
     # História
     Label(content_area, 
@@ -100,8 +103,8 @@ def create_home_page(parent_frame):
           font=("Georgia", 14, "bold"), 
           fg="#F4D465", 
           bg="#1A1512", anchor="center").pack(fill="x", pady=(10, 2))
-    historia_texto = "Fundado em [Ano], nosso restaurante nasceu da paixão por [Cozinha/Conceito]. Nossa jornada começou com uma pequena cozinha e o sonho de elevar a gastronomia a uma forma de arte, focando sempre na qualidade dos ingredientes e na hospitalidade."
-    Label(content_area, text=historia_texto, font=("Georgia", 12), fg="white", bg="#1A1512",
+    historia_texto = "Fundado em 1951, nosso restaurante nasceu da paixão por cozinhar. Nossa jornada começou com uma pequena cozinha e o sonho de elevar a gastronomia a uma forma de arte, focando sempre na qualidade dos ingredientes e na hospitalidade."
+    Label(content_area, text=historia_texto, font=("Arial", 12), fg="white", bg="#1A1512",
           wraplength=750, justify=CENTER).pack(fill="x") 
           
     # Valores
@@ -120,7 +123,7 @@ def create_home_page(parent_frame):
           font=("Georgia", 14, "bold"), 
           fg="#F4D465", 
           bg="#1A1512", anchor="center").pack(fill="x", pady=(10, 2))
-    metas_texto = "Nossa meta é expandir para novas cidades mantendo a exclusividade, lançar um menu sazonal focado em ingredientes locais e conquistar a [Estrela/Prêmio] gastronômica mais renomada do país nos próximos 3 anos."
+    metas_texto = "Nossa meta é expandir para novas cidades mantendo a exclusividade, lançar um menu sazonal focado em ingredientes locais e conquistar nossa tarceira estrela michelin,nossa experiência gastronômica é a  mais renomada do país nos últimos 3 anos."
     Label(content_area, text=metas_texto, font=("Georgia", 12), fg="white", bg="#1A1512",
           wraplength=750, justify=CENTER).pack(fill="x") 
 
@@ -129,7 +132,7 @@ def create_home_page(parent_frame):
     Label(content_area, 
           text="O que Dizem Nossos Críticos", 
           font=("Georgia", 18, "underline"), 
-          fg="white", 
+          fg="#BEA95B", 
           bg="#1A1512",
           anchor="center").pack(fill="x", pady=(30, 10))
           
@@ -145,7 +148,7 @@ def create_home_page(parent_frame):
     critica1_box.grid(row=0, column=0, padx=15)
     
     Label(critica1_box, 
-          text="\"Uma orquestra de sabores. O melhor [Prato] que já provei! Experiência de cinco estrelas.\" - [Nome do Crítico], Revista Gastrô", 
+          text="\"Uma orquestra de sabores. O melhor Medalhão de Filé Mignon que já provei! Experiência de cinco estrelas.\" - Anthony Bourdain, ELLE à Table", 
           font=("Georgia", 11, "italic"), fg="white", bg="#2A2218", 
           wraplength=350, justify=CENTER).pack(expand=True, fill="both") 
 
@@ -155,7 +158,7 @@ def create_home_page(parent_frame):
     critica2_box.grid(row=0, column=1, padx=15)
     
     Label(critica2_box, 
-          text="\"O serviço impecável e o ambiente criam o clima ideal para uma noite especial. É o novo templo da alta cozinha local.\" - [Nome do Crítico], Blog Sabor & Arte", 
+          text="\"O serviço impecável e o ambiente criam o clima ideal para uma noite especial. É o novo templo da alta cozinha local.\" -Érick Jacquin, Blog Sabor & Arte", 
           font=("Georgia", 11, "italic"), fg="white", bg="#2A2218", 
           wraplength=350, justify=CENTER).pack(expand=True, fill="both")
           
@@ -163,5 +166,5 @@ def create_home_page(parent_frame):
     Label(content_area, 
           text="Não perca tempo! Clique no botão 'Reserva' no menu lateral e garanta sua mesa.", 
           font=("Georgia", 14, "bold"), 
-          fg="#F4D465", 
+          fg="white", 
           bg="#1A1512").pack(pady=(30, 10))

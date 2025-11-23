@@ -7,7 +7,7 @@ import itertools # Usado para criar o ciclo de imagens
 class ImageCarousel(tk.Frame):
     def __init__(self, master, image_paths, delay_ms=4000):
         # Inicializa o Frame (o container do carrossel)
-        tk.Frame.__init__(self, master, bg="#1A1512")
+        tk.Frame.__init__(self, master, bg="yellow", bd=5, relief="solid")
         
         self.image_paths = image_paths
         self.delay_ms = delay_ms  # Atraso em milissegundos (4000 ms = 4 segundos)
@@ -70,13 +70,13 @@ if __name__ == '__main__':
     root = tk.Tk()
     root.title("Teste de Carrossel Tkinter")
     root.geometry("800x600")
-    root.configure(bg="#1A1512")
+    root.configure(bg="red")
 
     # ⚠️ SUBSTITUA ESTES CAMINHOS PELOS SEUS ARQUIVOS REAIS! ⚠️
     image_list_test = [
-        "caminho/para/imagem1.jpg", 
-        "caminho/para/imagem2.jpg", 
-        "caminho/para/imagem3.jpg"
+        "imagens/ebano.png", 
+        "imagens/interior.png", 
+        "imagens/prato_principal.png"
     ]
     
     # Criar e empacotar o carrossel
